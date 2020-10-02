@@ -8,7 +8,11 @@ This project requires the following:
 * Yarn 1.19
 
 1. Clone the repo
-2. Run yarn install
-3. Run yarn dev:start !
+2. Create a .env file in the root folder and add your MongoDB URI
+   ```bash
+   MONGO_URI=yourmongourihere
+   ```
+3. Run yarn install
+4. Run yarn dev:start !
 
 Happy trails!
