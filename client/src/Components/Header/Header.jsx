@@ -3,9 +3,9 @@ import React from 'react';
 
 export const Header = () => {
   return (
-    <header className='hero hero-sm bg-primary'>
-      <div className='hero-body p-centered'>
-        <h1>Welcome to Express + React!</h1>
+    <header>
+      <div>
+        <h1>BTB, This is a test of the emergency broadcast system</h1>
       </div>
     </header>
   );
