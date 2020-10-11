@@ -1,9 +1,13 @@
-const express = require('express');
-const morgan = require('morgan');
-const PORT = process.env.PORT || 9001;
-const path = require('path');
-const api = require('./routes/api');
-const app = express();
+const express           = require('express');
+const morgan            = require('morgan');
+const PORT              = process.env.PORT || 9001;
+const path              = require('path');
+const api               = require('./routes/api');
+const connectToDatabase = require('./database/connection');
+const app               = express();
+
+// Database connection
+connectToDatabase();
 
 // Middleware:
 /* istanbul ignore next */
