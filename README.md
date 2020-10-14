@@ -1,6 +1,8 @@
 # Storie
 A full stack family stories app designed as a visual, private blog and built with Node, Express, and Create-React-App.
 
+MVP: Full CRUD for storie posts and user authentication
+
 ## Getting started
 This project requires the following:
 
