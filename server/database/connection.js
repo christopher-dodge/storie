@@ -1,7 +1,7 @@
 const express           = require('express');
 const _dotenv           = require('dotenv').config();
 const {MongoClient}     = require('mongodb');
-const URI               = process.env.DATABASEURI;
+const URI               = process.env.DATABASEURI || 'mongodb://127.0.0.1:27017/storie';
 const client            = new MongoClient(URI, {
   useUnifiedTopology: true
 });
