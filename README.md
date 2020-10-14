@@ -1,5 +1,5 @@
-# express-react-dev
-A starting point boilerplate full stack project built with Node, Express, and Create-React-App.
+# Storie
+A full stack family stories app designed as a visual, private blog and built with Node, Express, and Create-React-App.
 
 ## Getting started
 This project requires the following:
@@ -8,7 +8,17 @@ This project requires the following:
 * Yarn 1.19
 
 1. Clone the repo
-2. Run yarn install
-3. Run yarn dev:start !
+2. Install:
+```bash
+yarn install
+```
+3. Run: 
+```bash
+yarn dev:start
+```
 
+## Contributing
+When submitting a PR please make sure that the corresponding issue # is present.
+
+## Go Team!
 Happy trails!
