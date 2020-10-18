@@ -9,7 +9,7 @@ const client            = new MongoClient(URI, {
 function getConnectionURI() {
   console.log(process.env.NODE_ENV);
   if (process.env.NODE_ENV === "development") {
-    return 'mongodb://127.0.0.1:27017/storie';
+    return 'mongodb://127.0.0.1:27017/dev_storie';
   }
   if (process.env.NODE_ENV === "production") {
     return process.env.DATABASEURI;
