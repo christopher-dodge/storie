@@ -1,5 +1,3 @@
-const express           = require('express');
-const _dotenv           = require('dotenv').config();
 const {MongoClient}     = require('mongodb');
 const URI               = getConnectionURI();
 const client            = new MongoClient(URI, {
@@ -8,6 +6,7 @@ const client            = new MongoClient(URI, {
 
 function getConnectionURI() {
   console.log(process.env.NODE_ENV);
+  // Check for staging
   if (process.env.NODE_ENV === "development") {
     return 'mongodb://127.0.0.1:27017/dev_storie';
   }
@@ -21,14 +20,18 @@ async function main() {
   try {
     // Connect to the MongoDB cluster
     await client.connect();
+    // throw new Error('Big nasty error!!!');
+    // return;
 
     console.log(`Connected to ${URI}`);
 
     // Make the appropriate DB calls
     // await listDatabases(client);
+    return Promise.resolve(true);
 
   } catch (e) {
     console.error(e);
+    return Promise.reject(false);
   }
 }
   

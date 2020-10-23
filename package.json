@@ -7,7 +7,7 @@
     "test": "yarn run clean:reports && yarn run test:server && yarn run test:client",
     "test:server": "cd server && nyc mocha 'tests/**/*.js' --recursive",
     "test:client": "cd client && yarn test:coverage",
-    "dev:start:server": "nodemon ./server/server.js",
+    "dev:start:server": "NODE_ENV=development nodemon ./server/server.js",
     "dev:start:client": "cd client && yarn start",
     "dev:start": "concurrently \"yarn run dev:start:server\" \"yarn run dev:start:client\"",
     "install": "cd client && yarn install",
