@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, FormGroup, TextField } from '@material-ui/core';
 import { useState } from 'react';
+import API from '../../utils/API';
 
 export default function BlogForm() {
   const [title, setTitle] = useState('');
@@ -15,6 +16,13 @@ export default function BlogForm() {
         body
       };
       console.log(postBody);
+        API.postStorie(postBody)
+          .then(data=>{
+            console.log(data);
+          })
+          .catch(err=>{
+            console.log(err);
+          })
     }
   };
 
@@ -39,7 +47,7 @@ export default function BlogForm() {
           setBody(e.target.value);
         }}
       />
-      <Button type='primary' onClick={handleFormSubmit}>
+      <Button variant='contained' color='primary' onClick={handleFormSubmit}>
         Submit
       </Button>
     </FormGroup>
