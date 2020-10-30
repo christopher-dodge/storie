@@ -1,11 +1,11 @@
-// React
 import React from 'react';
+import NavDrawer from '../../Components/NavDrawer';
 
 export const Header = () => {
   return (
     <header>
       <div>
-        <h1>BTB, This is a test of the emergency broadcast system</h1>
+        <NavDrawer />
       </div>
     </header>
   );
