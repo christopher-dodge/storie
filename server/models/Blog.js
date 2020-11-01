@@ -8,7 +8,7 @@ const blogSchema = new mongoose.Schema({
     },
 // in my experience the author would be handled by the user model having an array perhaps called "posts" that references this Blog schema so not sure if we need this here or not.
   author: {
-    type: string,
+    type: String,
     default: false,
   },
   body: {
