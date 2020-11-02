@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const blogSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true
+    required: true,
     },
 // in my experience the author would be handled by the user model having an array perhaps called "posts" that references this Blog schema so not sure if we need this here or not.
   author: {
@@ -13,6 +13,7 @@ const blogSchema = new mongoose.Schema({
   },
   body: {
     type: String,
+    required: true,
   },
   datePosted: {
     type: Date,
