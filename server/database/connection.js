@@ -1,8 +1,9 @@
-const {MongoClient}     = require('mongodb');
+// const {MongoClient}     = require('mongodb');
+const mongoose          = require('mongoose');
 const URI               = getConnectionURI();
-const client            = new MongoClient(URI, {
-  useUnifiedTopology: true
-});
+// const client            = new MongoClient(URI, {
+//   useUnifiedTopology: true
+// });
 
 function getConnectionURI() {
   console.log(process.env.NODE_ENV);
@@ -16,12 +17,15 @@ function getConnectionURI() {
 }
 
 // MongoDB connection
-async function main() {
+async function connectToMongoClient() {
   try {
+    await mongoose.connect(URI, {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useUnifiedTopology: true
+    });
     // Connect to the MongoDB cluster
-    await client.connect();
-    // throw new Error('Big nasty error!!!');
-    // return;
+    // await client.connect();
 
     console.log(`Connected to ${URI}`);
 
@@ -34,14 +38,7 @@ async function main() {
     return Promise.reject(false);
   }
 }
-  
-// async function listDatabases(client) {
-//   databaseList = await client.db().admin().listDatabases();
 
-//   console.log("Databases:");
-//   databaseList.databases.forEach(db => console.log(` - ${db.name}`));
-// }
+module.exports = connectToMongoClient;
 
-module.exports = main;
-
-// Way to send close to the server (just like sending main to server) - research, also for testing
+// Way to send close to the server (just like sending connectToMongoClient to server) - research, also for testing
