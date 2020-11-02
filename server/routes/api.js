@@ -10,12 +10,10 @@ router.get('/current-time', (req, res) => {
 
 // Create Blog Entry
 router.post('/blogs', async (req, res) => {
+  console.log(req.body);
   try {
-    const createdBlog = await db.Blog.create({
-      title: "Yata yata",
-      body: "This is the body"
-    });
-
+    const createdBlog = await db.Blog.create(req.body);
+    
     console.log(createdBlog);
     res.json(createdBlog);
     
