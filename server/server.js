@@ -20,6 +20,8 @@ async function startServer() {
 
   // Tell node where to serve static files from
   app.use(express.static(path.join(__dirname, '../client/public')));
+  app.use(express.urlencoded({ extended: true }));
+  app.use(express.json());
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/public/index.html'));
   });

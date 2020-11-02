@@ -7,7 +7,7 @@ export default function BlogForm() {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = async () => {
     if (title === '' || body === '') {
       return;
     } else {
@@ -16,13 +16,12 @@ export default function BlogForm() {
         body
       };
       console.log(postBody);
-        API.postStorie(postBody)
-          .then(data=>{
-            console.log(data);
-          })
-          .catch(err=>{
+      try {
+        const data = await API.postStorie(postBody);
+        console.log(data);
+      } catch(err) {
             console.log(err);
-          })
+          }
     }
   };
 
