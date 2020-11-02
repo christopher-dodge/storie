@@ -4,12 +4,13 @@ const PORT              = process.env.PORT || 9001;
 const path              = require('path');
 const api               = require('./routes/api');
 const connectToDatabase = require('./database/connection');
+const db                = require('./models');
 const app               = express();
 
 async function startServer() {
   // Database connection, will be true or false
   const dbConnected = await connectToDatabase();
-  console.log('\ndbConnected: ' + dbConnected); 
+  console.log('\ndbConnected: ' + dbConnected);
 
   // Middleware:
   /* istanbul ignore next */
@@ -19,6 +20,8 @@ async function startServer() {
 
   // Tell node where to serve static files from
   app.use(express.static(path.join(__dirname, '../client/public')));
+  app.use(express.urlencoded({ extended: true }));
+  app.use(express.json());
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/public/index.html'));
   });
