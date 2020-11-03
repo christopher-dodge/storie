@@ -1,14 +1,18 @@
 import React from 'react';
-import Header from './Components/Header';
 import BlogForm from './Components/BlogForm';
+import Header from './Components/Header';
+import Splash from './Pages/Splash';
+// import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 export const App = () => {
 
   return (
+    // <Router>
     <div className='App'>
       <Header />
-      <BlogForm />
+      <Splash />
     </div>
+    // </Router>
   );
 };
 

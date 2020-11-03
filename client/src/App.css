@@ -1,0 +1,17 @@
+.center {
+  text-align: center;
+}
+
+.p-top-10 {
+  padding-top: 10em;
+}
+
+.m-bot-5 {
+  margin-bottom: 5em;
+}
+
+.big-text {
+  font-size: 6em;
+  margin: 0;
+}
+
