@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import API from '../../utils/API';
+import StorieCard from '../../Components/StorieCard';
 
 export default function Stories() {
   useEffect(() => {
@@ -19,10 +20,8 @@ export default function Stories() {
   return (
     <div>
       <h1>Lots of Stories go here</h1>
-      {stories.map(storie => (
-        <h3>
-          {storie.title}
-        </h3>
+      {stories.map((storie, index) => (
+          <StorieCard key={index} storie={storie}/>
       ))}
     </div>
   )
