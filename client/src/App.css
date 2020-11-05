@@ -1,11 +1,25 @@
 .center {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #splash {
-  background-image: url("https://images.unsplash.com/photo-1569073120512-05362a6b92e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
   padding-top: 25%;
-  color: white;
+  /* color: white; */
+  text-align: center;
+}
+
+.full-screen {
+  height: 100vh;
+}
+
+#stories {
+  text-align: center;
+}
+
+.m-bot-2 {
+  margin-bottom: 2em;
 }
 
 .m-bot-5 {
