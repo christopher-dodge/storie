@@ -1,8 +1,11 @@
 import axios from 'axios';
 
 const API = {
-  postStorie: function(postData) {
-    return axios.post('/api/blogs', postData)
+  postStorie: (postData) => {
+    return axios.post('/api/blogs', postData);
+  },
+  getStories: () => {
+    return axios.get('/api/blogs');
   }
 }
 

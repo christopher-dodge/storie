@@ -1,0 +1,33 @@
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#splash {
+  padding-top: 25%;
+  /* color: white; */
+  text-align: center;
+}
+
+.full-screen {
+  height: 100vh;
+}
+
+#stories {
+  text-align: center;
+}
+
+.m-bot-2 {
+  margin-bottom: 2em;
+}
+
+.m-bot-5 {
+  margin-bottom: 5em;
+}
+
+.big-text {
+  font-size: 6em;
+  margin: 0;
+}
+

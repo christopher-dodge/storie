@@ -8,15 +8,26 @@ router.get('/current-time', (req, res) => {
   res.json({ time: unixTime });
 });
 
-// Create Blog Entry
+// INDEX Route - show all stories
+router.get('/blogs', async (req, res) => {
+  try {
+    const allStories = await db.Blog.find();
+    
+    // console.log(allStories);
+    res.json(allStories);
+  } catch(err) {
+    return err;
+  }
+});
+
+// CREATE Route - add new storie to the DB
 router.post('/blogs', async (req, res) => {
   console.log(req.body);
   try {
     const createdBlog = await db.Blog.create(req.body);
     
-    console.log(createdBlog);
+    // console.log(createdBlog);
     res.json(createdBlog);
-    
   } catch(err) {
     return err;
   }
